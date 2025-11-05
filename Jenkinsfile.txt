@@ -1,22 +1,35 @@
 pipeline {
-  agent any
-  stages {
-    stage('Checkout') {
-      steps {
-        git credentialsId: 'Chakra_test_token', 
-        url: 'https://github.com/pchakra2025/playwright.git',
-        branch: 'Chakra_Github_PlayWright_test'
-      }
+    agent any
+    tools {
+        jdk 'JDK21'   
+        maven 'Maven_3.9.11' 
     }
-    stage('Build') {
-      steps {
-        echo 'Building...'
-      }
+
+       stages {
+        stage('Checkout') {
+            steps {
+                //git credentialsId: 'Chakra_test_token', 
+        	url: 'https://github.com/pchakra2025/playwright.git',
+        	branch: 'Chakra_Github_PlayWright_test'
+
+            }
+        }
+
+       stage('Build') {
+           steps {
+		bat 'java -version'
+	        bat 'mvn clean install'
+           }
+        }
+
+       stage('Run Playwright Tests') {
+           steps {
+                 bat 'mvn test'  //it will run all the program
+                 println "welcome to Jenkins"
+ 
+            }
+       }
     }
-    stage('Test') {
-      steps {
-        echo 'Testing...'
-      }
-    }
-  }
-}
+   
+}   
+
