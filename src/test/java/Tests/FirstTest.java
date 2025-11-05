@@ -8,12 +8,13 @@ import com.microsoft.playwright.Playwright;
 public class FirstTest {
 
 	public static void main(String[] args) {
-	 Playwright playwright = Playwright.create();
-	 Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-	 Page page = browser.newPage();
-	 page.navigate("https://amdocs.com");
-	 System.out.println("Hello.. I am " + page.title());
-	 browser.close();
+//	 Playwright playwright = Playwright.create();
+//	 Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+//	 Page page = browser.newPage();
+//	 page.navigate("https://amdocs.com");
+//	 System.out.println("Hello.. I am " + page.title());
+//	 browser.close();
+		System.out.println("i am running and printing");
 	}
 	
 	
