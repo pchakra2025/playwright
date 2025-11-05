@@ -24,7 +24,8 @@ pipeline {
 
        stage('Run Playwright Tests') {
            steps {
-                 bat 'mvn test'  //it will run all the program
+                 //bat 'mvn test'  //it will run all the program
+		 bat 'mvn -Dtest=FirstTest test'
                  println "welcome to Jenkins"
  
             }
