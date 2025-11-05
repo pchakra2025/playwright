@@ -8,7 +8,7 @@ pipeline {
        stages {
         stage('Checkout') {
             steps {
-                //git credentialsId: 'Chakra_test_token', 
+                git credentialsId: 'Chakra_test_token', 
         	url: 'https://github.com/pchakra2025/playwright.git',
         	branch: 'Chakra_Github_PlayWright_test'
 
